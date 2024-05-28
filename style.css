@@ -1,0 +1,162 @@
+/* Definições gerais de reset e variáveis CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white; /* Definição da cor do texto padrão */
+    --bg-url: url(/img/bg-mobile.jpg); /* URL da imagem de fundo padrão */
+    --stroke-color: rgba(255, 255, 255, 0.5); /* Cor da borda padrão */
+    --surface-color: rgba(255, 255, 255, 0.05); /* Cor de superfície padrão */
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de superfície ao passar o mouse */
+    --highlight-color: rgba(255, 255, 255, 0.2); /* Cor de destaque */
+    --switch-bg-url: url(/img/moon-stars.svg); /* URL para imagem do botão de alternância */
+}
+
+/* Modo claro para variáveis CSS */
+.light {
+    --text-color: black; /* Cor do texto em modo claro */
+    --bg-url: url(/img/bg-mobile-light.jpg); /* URL da imagem de fundo em modo claro */
+    --stroke-color: rgba(0, 0, 0, 0.5); /* Cor da borda em modo claro */
+    --surface-color: rgba(0, 0, 0, 0.05); /* Cor de superfície em modo claro */
+    --surface-color-hover: rgba(0, 0, 0, 0.02); /* Cor de superfície ao passar o mouse em modo claro */
+    --highlight-color: rgba(0, 0, 0, 0.1); /* Cor de destaque em modo claro */
+    --switch-bg-url: url(/img/sun.svg); /* URL para imagem do botão de alternância em modo claro */
+}
+
+/* Estilos para o corpo da página */
+body {
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+/* Estilos gerais para elementos dentro do corpo da página */
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+/* Container principal */
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+/* Perfil */
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    display: block;
+    width: 112px;
+    margin: auto;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Botão de alternância de tema */
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 0;
+    border-radius: 50%;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    z-index: 1;
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch samp {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+/* Estilos para links */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+ul li a {
+    background: var(--surface-color);
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* Links de redes sociais */
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+}
+
+/* Rodapé */
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
